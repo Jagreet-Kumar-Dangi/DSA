@@ -3,7 +3,7 @@ using namespace std;
 
 int kadaneAlgo(vector<int> &nums,int n){
     long long int sum=0;
-    int maxi=LONG_MIN;
+    int maxi=INT_MIN;
     for(int i=0;i<n;i++){
         sum+=nums[i];
         if(sum>maxi)
