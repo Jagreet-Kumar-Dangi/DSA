@@ -13,6 +13,16 @@ vector<int> leader(vector<int> &nums,int n){
     reverse(arr.begin(),arr.end());
     return arr;
 }
+
+vector<int> replacegreatestOneRightSide(vector<int> &nums,int n){
+    int maxi=-1;
+    for(int i=n-1;i>=0;i--){
+        int current=nums[i];
+        nums[i]=maxi;
+        maxi=max(current,maxi);
+    }
+    return nums;
+}
 int main(){
     int n;
     cout<<"Enter size of array: ";
