@@ -13,7 +13,7 @@ int longestConsecutiveSeq(vector<int> nums,int n){
         else
             cnt=0;
     }
-    return lcnt;
+    return lcnt+1;
 }
 
 int main(){
