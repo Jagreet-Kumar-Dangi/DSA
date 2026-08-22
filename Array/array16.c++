@@ -13,18 +13,20 @@ vector<int> sprial(vector<vector<int>> nums){
             ans.push_back(nums[top][i]);
             top++;
         }
-        for(int i=top;i<=bottom;i++){
-            ans.push_back(nums[i][right]);
-            right--;
+        if(top<=bottom){
+            for(int i=top;i<=bottom;i++){
+                ans.push_back(nums[i][right]);
+                right--;
+            }
         }
-        if(left<=right){
-            for(int i=right;i<=left;i++){
+        if(left<=right && top<=bottom){
+            for(int i=right;i>=left;i--){
                 ans.push_back(nums[bottom][i]);
                 bottom--;
             }
         }
-        if(top<=bottom){
-            for(int i=bottom;i<=top;i++){
+        if(top<=bottom && left<=right){
+            for(int i=bottom;i>=top;i--){
                 ans.push_back(nums[i][left]);
                 left++;
             }
