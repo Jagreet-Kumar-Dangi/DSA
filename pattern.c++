@@ -5,23 +5,30 @@ int main(){
     int n;
     cout<<"Enter number: ";
     cin >>n;
-    int m=0;
-    bool flag=true;
+    char m='A';
+    int num=1;
+    int check=true;
     for(int i=0;i<n;i++){
-        for(int j=n-i;j<n;j++)
+        for(int j=0;j<=i;j++)
             cout<<"  ";
-        for(int z=i;z<n;z++){
-            if(m==26)
-                m=0;
-            if(flag){
-                cout<<char(m+65)<<" ";
-                flag=false;
-                m++;
+        for(int x=n-i;x>0;x--){
+            if(check){
+                cout<<m<<" ";
+                if(m=='Z' ||m=='z')
+                    m='A';
+                if(m>='A' && m<='Z'){
+                    m=m-'A'+'a';
+                    m +=1;
+                }else{
+                    m=m-'a'+'A';
+                    m +=1;
+                }
+                check=false;
             }else{
-                cout<<char(m+97)<<" ";
-                flag=true;
-                m++;
+                cout<<num++<<" ";
+                check=true;
             }
+
         }
         cout<<endl;
     }
