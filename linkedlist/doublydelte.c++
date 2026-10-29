@@ -33,9 +33,12 @@ Node* createLinked(int arr[],int n){
 }
 
 void deleteHead(Node*& head){
+    if(head==nullptr || head->next==nullptr)
+        return nullptr;
     Node* temp=head;
     head=head->next;
     head->prev=nullptr;
+    temp->next=nullptr;
     delete temp;
 }
 
@@ -46,10 +49,11 @@ void deleteTail(Node*& head){
     }
     Node* back=temp->prev;
     back->next=nullptr;
-  
     delete temp;
 
 }
+
+
 void display(Node* head){
     Node* temp=head;
     while(temp!=nullptr){
